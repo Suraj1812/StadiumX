@@ -18,10 +18,18 @@ export function Footer() {
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <div className="mb-4 flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-md border border-[#0B5A3F]/20 bg-[#EDF8EE] shadow-sm">
-              <RadioTower className="h-5 w-5 text-[#E6B325]" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0B5A3F]">
+              <div className="relative flex items-end gap-[3px]">
+                <span className="h-5 w-[3px] rounded-full bg-white" />
+                <span className="h-7 w-[3px] rounded-full bg-white" />
+                <span className="h-4 w-[3px] rounded-full bg-white" />
+                <span className="absolute -right-2 -top-1 h-2.5 w-2.5 rounded-full bg-[#E6B325]" />
+              </div>
+            </div>
+
+            <span className="font-display text-3xl uppercase tracking-wide text-[#102117]">
+              StadiumX
             </span>
-              <span className="font-display text-3xl uppercase text-[#102117]">StadiumX</span>
           </div>
           <p className="max-w-xl text-sm leading-6 text-[#526158]">
             Cricket broadcast design, crowd emotion, live analytics, and 3D stadium atmosphere

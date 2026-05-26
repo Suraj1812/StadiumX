@@ -90,12 +90,9 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-52 bg-gradient-to-t from-[#F7F9F2] to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[94vh] w-full max-w-7xl flex-col justify-between pb-8 pt-24 sm:pt-28">
-        <div className="grid items-end gap-10 pb-10 pt-16 lg:grid-cols-[minmax(0,1fr)_25rem] lg:pb-16 lg:pt-24">
+       <div className="grid gap-10 pb-10 pt-16 lg:grid-cols-[minmax(0,1fr)_25rem] lg:pb-16 lg:pt-24">
           <div>
-            <Badge className="hero-kicker mb-5 border-[#0B5A3F]/20 bg-white px-3 py-1 text-[#0B5A3F] shadow-sm">
-              <Radio className="mr-2 h-3.5 w-3.5" />
-              Live from a floodlit final
-            </Badge>
+           
             <h1 className="hero-title max-w-5xl overflow-hidden font-display text-[clamp(4.2rem,16vw,12.5rem)] uppercase leading-[0.78] text-[#102117]">
               <span className="block">Cricket</span>
               <span className="block text-[#0B5A3F]">In Motion</span>
@@ -124,12 +121,6 @@ export function HeroSection() {
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="broadcast-frame relative h-60 overflow-hidden rounded-md sm:h-72">
-              <div className="absolute left-5 top-5 z-10 rounded-full border border-[#102117]/10 bg-white/85 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#0B5A3F] shadow-sm">
-                3D match ball
-              </div>
-              <StadiumScene />
-            </div>
             <AnimatedScore />
             <div className="grid grid-cols-2 gap-3">
               {broadcastStats.map((stat, index) => (
@@ -150,13 +141,7 @@ export function HeroSection() {
           <LiveTicker />
         </div>
 
-        <a
-          href="#live-match"
-          className="absolute bottom-24 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-[#102117]/50 lg:flex"
-        >
-          Scroll
-          <ChevronDown className="h-5 w-5 animate-bounce text-[#0B5A3F]" />
-        </a>
+       
       </div>
     </section>
   );

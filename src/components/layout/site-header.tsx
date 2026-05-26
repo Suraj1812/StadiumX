@@ -26,10 +26,18 @@ export function SiteHeader() {
     <header className="fixed left-0 right-0 top-0 z-40 border-b border-[#102117]/10 bg-[#FBFCF7]/86 px-4 py-3 shadow-[0_10px_30px_rgba(16,33,23,.06)] backdrop-blur-xl sm:px-6 lg:px-10 2xl:px-16">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
         <a href="#top" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-md border border-[#0B5A3F]/20 bg-white shadow-sm">
-            <Trophy className="h-5 w-5 text-[#E6B325]" />
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0B5A3F]">
+            <div className="relative flex items-end gap-[3px]">
+              <span className="h-5 w-[3px] rounded-full bg-white" />
+              <span className="h-7 w-[3px] rounded-full bg-white" />
+              <span className="h-4 w-[3px] rounded-full bg-white" />
+              <span className="absolute -right-2 -top-1 h-2.5 w-2.5 rounded-full bg-[#E6B325]" />
+            </div>
+          </div>
+
+          <span className="font-display text-2xl uppercase tracking-wide text-[#102117]">
+            StadiumX
           </span>
-          <span className="font-display text-2xl uppercase leading-none text-[#102117]">StadiumX</span>
         </a>
 
         <nav className="hidden items-center gap-1 rounded-full border border-[#102117]/10 bg-white px-1.5 py-1.5 shadow-sm lg:flex">
@@ -45,10 +53,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#0B5A3F]/15 bg-[#EDF8EE] px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#0B5A3F]">
-            <Activity className="h-3.5 w-3.5" />
-            Stable live UI
-          </span>
+
           <a
             href="#analytics"
             className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-[#0B5A3F] px-3 text-sm font-medium text-white transition hover:bg-[#063b2a]"
@@ -64,10 +69,10 @@ export function SiteHeader() {
               <Button variant="outline" size="icon" className="lg:hidden" />
             }
           >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Open navigation</span>
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Open navigation</span>
           </SheetTrigger>
-          <SheetContent className="border-[#102117]/10 bg-[#FBFCF7]">
+          <SheetContent className="border-[#102117]/10 bg-[#FBFCF7] p-4 pt-3">
             <SheetHeader>
               <SheetTitle className="font-display text-3xl uppercase text-[#102117]">StadiumX</SheetTitle>
             </SheetHeader>
