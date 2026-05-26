@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Star } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import type { Player } from "@/data/cricket";
@@ -35,12 +36,18 @@ export function PlayerCard({ player, index }: { player: Player; index: number })
       transition={{ duration: 0.75, delay: index * 0.08 }}
       className="group relative min-h-[36rem] overflow-hidden rounded-md border border-white/10 bg-[#07110e]"
     >
-      <motion.img
-        src={player.image}
-        alt={`${player.name} spotlight`}
+      <motion.div
         style={{ y: imageY }}
-        className="absolute inset-0 h-[112%] w-full object-cover opacity-58 grayscale-[20%] transition duration-700 group-hover:scale-105 group-hover:opacity-74"
-      />
+        className="absolute inset-x-0 -top-[6%] h-[112%] transition duration-700 group-hover:scale-105"
+      >
+        <Image
+          src={player.image}
+          alt={`${player.name} spotlight`}
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          className="object-cover opacity-58 grayscale-[20%] transition duration-700 group-hover:opacity-74"
+        />
+      </motion.div>
       <div
         className="absolute inset-0"
         style={{

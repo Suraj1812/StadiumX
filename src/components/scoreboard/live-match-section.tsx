@@ -16,6 +16,7 @@ import { SectionShell } from "@/components/layout/section-shell";
 import { Progress } from "@/components/ui/progress";
 import { inningsData, overByOver, teams } from "@/data/cricket";
 import { useCountUp } from "@/hooks/use-count-up";
+import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
 import { TeamLogo } from "./team-logo";
 
@@ -37,6 +38,7 @@ export function LiveMatchSection() {
   const batting = teams[2];
   const bowling = teams[0];
   const win = useCountUp(54, 1200, 36);
+  const mounted = useMounted();
 
   return (
     <SectionShell
@@ -146,28 +148,32 @@ export function LiveMatchSection() {
                 <Gauge className="h-8 w-8 text-[#E6B325]" />
               </div>
               <div className="h-64">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={inningsData}>
-                    <defs>
-                      <linearGradient id="runs" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#5CFF8F" stopOpacity={0.8} />
-                        <stop offset="95%" stopColor="#5CFF8F" stopOpacity={0.02} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
-                    <XAxis dataKey="over" stroke="rgba(255,255,255,0.38)" tickLine={false} axisLine={false} />
-                    <YAxis stroke="rgba(255,255,255,0.38)" tickLine={false} axisLine={false} width={28} />
-                    <ChartTooltip
-                      contentStyle={{
-                        background: "#07110e",
-                        border: "1px solid rgba(92,255,143,.25)",
-                        borderRadius: 6,
-                        color: "#fff",
-                      }}
-                    />
-                    <Area type="monotone" dataKey="runs" stroke="#5CFF8F" strokeWidth={3} fill="url(#runs)" />
-                  </AreaChart>
-                </ResponsiveContainer>
+                {mounted ? (
+                  <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart data={inningsData}>
+                      <defs>
+                        <linearGradient id="runs" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#5CFF8F" stopOpacity={0.8} />
+                          <stop offset="95%" stopColor="#5CFF8F" stopOpacity={0.02} />
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
+                      <XAxis dataKey="over" stroke="rgba(255,255,255,0.38)" tickLine={false} axisLine={false} />
+                      <YAxis stroke="rgba(255,255,255,0.38)" tickLine={false} axisLine={false} width={28} />
+                      <ChartTooltip
+                        contentStyle={{
+                          background: "#07110e",
+                          border: "1px solid rgba(92,255,143,.25)",
+                          borderRadius: 6,
+                          color: "#fff",
+                        }}
+                      />
+                      <Area type="monotone" dataKey="runs" stroke="#5CFF8F" strokeWidth={3} fill="url(#runs)" />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="h-full rounded-md bg-white/[0.035]" />
+                )}
               </div>
             </div>
           </Reveal>

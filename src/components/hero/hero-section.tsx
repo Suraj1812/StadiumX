@@ -39,6 +39,22 @@ function AnimatedScore() {
   );
 }
 
+function HeroStat({ label, value, suffix = "" }: { label: string; value: number; suffix?: string }) {
+  const animated = useCountUp(value, 1200, value * 0.5);
+
+  return (
+    <div className="broadcast-frame rounded-md p-4">
+      <p className="text-[0.64rem] font-black uppercase tracking-[0.2em] text-white/48">
+        {label}
+      </p>
+      <p className="scoreboard-text mt-2 text-4xl text-white">
+        {Math.round(animated)}
+        {suffix}
+      </p>
+    </div>
+  );
+}
+
 export function HeroSection() {
   const scope = useRef<HTMLDivElement>(null);
   const mouse = useMousePosition();
@@ -130,17 +146,10 @@ export function HeroSection() {
                 <div
                   key={stat.label}
                   className={cn(
-                    "broadcast-frame rounded-md p-4",
                     index === 0 ? "col-span-2" : "",
                   )}
                 >
-                  <p className="text-[0.64rem] font-black uppercase tracking-[0.2em] text-white/48">
-                    {stat.label}
-                  </p>
-                  <p className="scoreboard-text mt-2 text-4xl text-white">
-                    {Math.round(useCountUp(stat.value, 1200, stat.value * 0.5))}
-                    {stat.suffix}
-                  </p>
+                  <HeroStat label={stat.label} value={stat.value} suffix={stat.suffix} />
                 </div>
               ))}
             </div>

@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type MagneticButtonProps = ComponentPropsWithoutRef<"button"> & {
+type MagneticButtonProps = Omit<HTMLMotionProps<"button">, "children"> & {
   children: ReactNode;
   variant?: "primary" | "ghost" | "danger";
 };
