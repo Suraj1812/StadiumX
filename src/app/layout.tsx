@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   title: "StadiumX | Cinematic Cricket Broadcast Experience",
   description:
     "A premium cricket single page experience with live-match energy, 3D stadium visuals, broadcast graphics, and immersive fan interactions.",
+
   keywords: [
     "cricket",
     "sports broadcast",
@@ -35,6 +36,12 @@ export const metadata: Metadata = {
     "Next.js",
     "Three.js",
   ],
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
