@@ -49,38 +49,38 @@
 }
 
 :root {
-  --background: #050505;
-  --foreground: #f7fff9;
-  --card: #08120f;
-  --card-foreground: #f7fff9;
-  --popover: #07110e;
-  --popover-foreground: #f7fff9;
-  --primary: #5cff8f;
-  --primary-foreground: #02140d;
-  --secondary: #071b2a;
-  --secondary-foreground: #e8fff0;
-  --muted: #12211d;
-  --muted-foreground: #a9c6b5;
+  --background: #f7f9f2;
+  --foreground: #102117;
+  --card: #ffffff;
+  --card-foreground: #102117;
+  --popover: #ffffff;
+  --popover-foreground: #102117;
+  --primary: #0b5a3f;
+  --primary-foreground: #ffffff;
+  --secondary: #e9f0e7;
+  --secondary-foreground: #102117;
+  --muted: #edf2eb;
+  --muted-foreground: #627167;
   --accent: #e6b325;
-  --accent-foreground: #1a1200;
+  --accent-foreground: #241a02;
   --destructive: #ff3b3b;
-  --border: rgb(255 255 255 / 12%);
-  --input: rgb(255 255 255 / 14%);
-  --ring: #5cff8f;
+  --border: rgb(16 33 23 / 12%);
+  --input: rgb(16 33 23 / 14%);
+  --ring: #0b5a3f;
   --chart-1: #5cff8f;
   --chart-2: #e6b325;
   --chart-3: #ff3b3b;
   --chart-4: #2bd4ff;
   --chart-5: #c084fc;
   --radius: 0.55rem;
-  --sidebar: #07110e;
-  --sidebar-foreground: #f7fff9;
-  --sidebar-primary: #5cff8f;
-  --sidebar-primary-foreground: #02140d;
-  --sidebar-accent: #13231f;
-  --sidebar-accent-foreground: #f7fff9;
-  --sidebar-border: rgb(255 255 255 / 12%);
-  --sidebar-ring: #5cff8f;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #102117;
+  --sidebar-primary: #0b5a3f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #edf2eb;
+  --sidebar-accent-foreground: #102117;
+  --sidebar-border: rgb(16 33 23 / 12%);
+  --sidebar-ring: #0b5a3f;
 }
 
 * {
@@ -89,8 +89,8 @@
 
 html {
   min-height: 100%;
-  background: #050505;
-  color-scheme: dark;
+  background: #f7f9f2;
+  color-scheme: light;
   scroll-behavior: auto;
 }
 
@@ -98,9 +98,9 @@ body {
   min-height: 100%;
   overflow-x: clip;
   background:
-    radial-gradient(circle at 50% -10%, rgb(92 255 143 / 14%), transparent 35rem),
-    radial-gradient(circle at 80% 10%, rgb(255 59 59 / 9%), transparent 24rem),
-    linear-gradient(180deg, #071b2a 0%, #050505 42%, #050505 100%);
+    radial-gradient(circle at 12% -8%, rgb(92 255 143 / 18%), transparent 30rem),
+    radial-gradient(circle at 85% 4%, rgb(230 179 37 / 16%), transparent 26rem),
+    linear-gradient(180deg, #fbfcf7 0%, #f7f9f2 48%, #eef4ec 100%);
   color: var(--foreground);
   font-family: var(--font-inter), "Inter", system-ui, sans-serif;
 }
@@ -138,12 +138,12 @@ a {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.35;
-    mix-blend-mode: soft-light;
+    opacity: 0.18;
+    mix-blend-mode: multiply;
     background-image:
-      linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px),
-      radial-gradient(circle at 20% 30%, rgb(255 255 255 / 8%) 0 1px, transparent 1px);
+      linear-gradient(rgb(11 61 46 / 4%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(11 61 46 / 3%) 1px, transparent 1px),
+      radial-gradient(circle at 20% 30%, rgb(11 61 46 / 10%) 0 1px, transparent 1px);
     background-size: 100% 3px, 4px 100%, 29px 31px;
   }
 
@@ -151,22 +151,25 @@ a {
     font-family: var(--font-bebas), "Bebas Neue", Impact, sans-serif;
     letter-spacing: 0.04em;
     text-shadow:
-      0 0 10px rgb(92 255 143 / 0.48),
-      0 0 28px rgb(92 255 143 / 0.22);
+      0 1px 0 rgb(255 255 255 / 0.85),
+      0 12px 28px rgb(11 61 46 / 0.12);
   }
 
   .broadcast-frame {
-    border: 1px solid rgb(255 255 255 / 12%);
+    border: 1px solid rgb(16 33 23 / 10%);
     background:
-      linear-gradient(135deg, rgb(255 255 255 / 10%), transparent 22%),
-      linear-gradient(180deg, rgb(11 61 46 / 76%), rgb(5 5 5 / 88%));
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 12%), 0 30px 80px rgb(0 0 0 / 38%);
+      linear-gradient(135deg, rgb(255 255 255 / 92%), rgb(255 255 255 / 72%) 52%, rgb(238 246 238 / 88%)),
+      radial-gradient(circle at top left, rgb(92 255 143 / 20%), transparent 28rem);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 92%),
+      0 24px 70px rgb(11 61 46 / 10%),
+      0 1px 2px rgb(16 33 23 / 8%);
   }
 
   .stadium-grid {
     background-image:
-      linear-gradient(90deg, rgb(92 255 143 / 8%) 1px, transparent 1px),
-      linear-gradient(0deg, rgb(92 255 143 / 8%) 1px, transparent 1px);
+      linear-gradient(90deg, rgb(11 90 63 / 8%) 1px, transparent 1px),
+      linear-gradient(0deg, rgb(11 90 63 / 8%) 1px, transparent 1px);
     background-size: 46px 46px;
     mask-image: linear-gradient(to bottom, transparent, black 20%, black 75%, transparent);
   }

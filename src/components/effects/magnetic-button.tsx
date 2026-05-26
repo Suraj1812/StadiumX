@@ -39,13 +39,13 @@ export function MagneticButton({
         onMouseLeave?.(event);
       }}
       className={cn(
-        "group relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-md border px-5 py-3 text-sm font-black uppercase tracking-[0.16em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CFF8F]",
+        "group relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-md border px-5 py-3 text-sm font-black uppercase tracking-[0.16em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B5A3F]",
         variant === "primary" &&
-          "border-[#5CFF8F]/50 bg-[#5CFF8F] text-[#04130d] shadow-neon-ring hover:bg-white",
+          "border-[#0B5A3F] bg-[#0B5A3F] text-white shadow-[0_16px_34px_rgba(11,90,63,.18)] hover:bg-[#063b2a]",
         variant === "ghost" &&
-          "border-white/15 bg-white/[0.04] text-white hover:border-[#E6B325]/70 hover:text-[#E6B325]",
+          "border-[#102117]/15 bg-white text-[#102117] shadow-sm hover:border-[#0B5A3F]/45 hover:text-[#0B5A3F]",
         variant === "danger" &&
-          "border-[#FF3B3B]/50 bg-[#FF3B3B] text-white shadow-led-red hover:bg-white hover:text-[#050505]",
+          "border-[#FF3B3B]/50 bg-[#FF3B3B] text-white shadow-[0_14px_34px_rgba(255,59,59,.16)] hover:bg-white hover:text-[#102117]",
         className,
       )}
     >

@@ -8,7 +8,7 @@ export function CursorGlow() {
   const y = useMotionValue(0);
   const smoothX = useSpring(x, { stiffness: 80, damping: 22 });
   const smoothY = useSpring(y, { stiffness: 80, damping: 22 });
-  const glow = useMotionTemplate`radial-gradient(circle, rgb(92 255 143 / 0.18), rgb(230 179 37 / 0.08) 36%, transparent 68%)`;
+  const glow = useMotionTemplate`radial-gradient(circle, rgb(11 90 63 / 0.10), rgb(230 179 37 / 0.08) 38%, transparent 70%)`;
 
   useEffect(() => {
     const move = (event: PointerEvent) => {

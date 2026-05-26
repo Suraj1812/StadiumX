@@ -128,8 +128,8 @@ export function StadiumScene() {
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
         <Suspense fallback={null}>
-          <color attach="background" args={["#050505"]} />
-          <fog attach="fog" args={["#050505", 4, 10]} />
+          <color attach="background" args={["#f7f9f2"]} />
+          <fog attach="fog" args={["#f7f9f2", 4, 10]} />
           <ambientLight intensity={0.65} color="#8beea7" />
           <FloodRig />
           <StadiumRim />

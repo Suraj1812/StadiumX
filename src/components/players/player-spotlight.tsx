@@ -12,7 +12,7 @@ export function PlayerSpotlight() {
       eyebrow="Player Spotlight"
       title="Faces Under Pressure"
       intro="Portrait-led match theatre with parallax, light sweeps, and numbers that feel like they belong on a premium player package."
-      className="bg-[#050505]"
+      className="bg-[#F7F9F2]"
     >
       <Reveal>
         <div className="grid gap-5 lg:grid-cols-3">

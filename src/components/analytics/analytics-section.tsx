@@ -24,10 +24,10 @@ import { useMounted } from "@/hooks/use-mounted";
 import { WagonWheel } from "./wagon-wheel";
 
 const chartStyle = {
-  background: "#07110e",
-  border: "1px solid rgba(92,255,143,.22)",
+  background: "#ffffff",
+  border: "1px solid rgba(16,33,23,.14)",
   borderRadius: 6,
-  color: "#fff",
+  color: "#102117",
 };
 
 export function AnalyticsSection() {
@@ -39,7 +39,7 @@ export function AnalyticsSection() {
       eyebrow="Match Analytics"
       title="Data With Stadium Heat"
       intro="Charts stay legible and broadcast-ready while the surrounding visuals keep the pressure and movement of a live chase."
-      className="bg-[#050505]"
+      className="bg-[#F7F9F2]"
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem]">
         <div className="grid gap-6">
@@ -47,10 +47,10 @@ export function AnalyticsSection() {
             <div className="broadcast-frame rounded-md p-5 sm:p-6">
               <div className="mb-5 flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#5CFF8F]">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">
                     Projection
                   </p>
-                  <h3 className="font-display text-4xl uppercase text-white">Run Acceleration</h3>
+                  <h3 className="font-display text-4xl uppercase text-[#102117]">Run Acceleration</h3>
                 </div>
                 <TrendingUp className="h-8 w-8 text-[#E6B325]" />
               </div>
@@ -67,7 +67,7 @@ export function AnalyticsSection() {
                         dataKey="rr"
                         stroke="#E6B325"
                         strokeWidth={3}
-                        dot={{ r: 4, fill: "#050505", stroke: "#E6B325", strokeWidth: 2 }}
+                        dot={{ r: 4, fill: "#ffffff", stroke: "#E6B325", strokeWidth: 2 }}
                         activeDot={{ r: 7, fill: "#E6B325" }}
                         isAnimationActive
                       />
@@ -82,7 +82,7 @@ export function AnalyticsSection() {
                     </LineChart>
                   </ResponsiveContainer>
                 ) : (
-                  <div className="h-full rounded-md bg-white/[0.035]" />
+                  <div className="h-full rounded-md bg-[#102117]/[0.035]" />
                 )}
               </div>
             </div>
@@ -91,7 +91,7 @@ export function AnalyticsSection() {
           <div className="grid gap-6 md:grid-cols-2">
             <Reveal delay={0.08}>
               <div className="broadcast-frame rounded-md p-5 sm:p-6">
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#5CFF8F]">
+                <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">
                   Strike zones
                 </p>
                 <div className="h-72">
@@ -107,7 +107,7 @@ export function AnalyticsSection() {
                       </BarChart>
                     </ResponsiveContainer>
                   ) : (
-                    <div className="h-full rounded-md bg-white/[0.035]" />
+                    <div className="h-full rounded-md bg-[#102117]/[0.035]" />
                   )}
                 </div>
               </div>
@@ -117,7 +117,7 @@ export function AnalyticsSection() {
               <div className="broadcast-frame rounded-md p-5 sm:p-6">
                 <div className="mb-4 flex items-center gap-3">
                   <Radar className="h-5 w-5 text-[#FF3B3B]" />
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#5CFF8F]">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">
                     Momentum meter
                   </p>
                 </div>
@@ -145,7 +145,7 @@ export function AnalyticsSection() {
                       </RadarChart>
                     </ResponsiveContainer>
                   ) : (
-                    <div className="h-full rounded-md bg-white/[0.035]" />
+                    <div className="h-full rounded-md bg-[#102117]/[0.035]" />
                   )}
                 </div>
               </div>
@@ -156,12 +156,12 @@ export function AnalyticsSection() {
         <Reveal delay={0.16}>
           <div className="grid gap-6">
             <WagonWheel />
-            <div className="rounded-md border border-white/12 bg-white/[0.035] p-5">
+            <div className="rounded-md border border-[#102117]/10 bg-white p-5 shadow-sm">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E6B325]">
                 Live model read
               </p>
               <motion.p
-                className="mt-3 font-score text-4xl leading-none text-white"
+                className="mt-3 font-score text-4xl leading-none text-[#102117]"
                 animate={{ opacity: [0.7, 1, 0.78] }}
                 transition={{ duration: 1.7, repeat: Infinity }}
               >

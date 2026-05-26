@@ -14,11 +14,11 @@ const shots = [
 
 export function WagonWheel() {
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-md border border-white/12 bg-[#07110e]">
+    <div className="relative aspect-square w-full overflow-hidden rounded-md border border-[#102117]/10 bg-white shadow-[0_22px_60px_rgba(16,33,23,.08)]">
       <div className="noise-overlay" />
       <svg viewBox="0 0 200 200" className="relative z-10 h-full w-full">
-        <circle cx="100" cy="100" r="82" fill="#082016" stroke="rgba(255,255,255,.14)" strokeWidth="1" />
-        <circle cx="100" cy="100" r="48" fill="none" stroke="rgba(92,255,143,.18)" strokeDasharray="4 6" />
+        <circle cx="100" cy="100" r="82" fill="#e7f2e6" stroke="rgba(16,33,23,.14)" strokeWidth="1" />
+        <circle cx="100" cy="100" r="48" fill="none" stroke="rgba(11,90,63,.18)" strokeDasharray="4 6" />
         <ellipse cx="100" cy="100" rx="12" ry="30" fill="#b78c45" opacity=".9" />
         <path d="M100 70 L106 100 L100 130 L94 100 Z" fill="#d7b178" opacity=".9" />
         {shots.map((shot, index) => {
@@ -43,8 +43,8 @@ export function WagonWheel() {
         })}
       </svg>
       <div className="absolute bottom-4 left-4 z-20">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-[#5CFF8F]">Wagon wheel</p>
-        <p className="font-score text-3xl text-white">64% leg side</p>
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">Wagon wheel</p>
+        <p className="font-score text-3xl text-[#102117]">64% leg side</p>
       </div>
     </div>
   );

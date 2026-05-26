@@ -24,9 +24,9 @@ function StatPulse({ label, value, suffix = "" }: { label: string; value: number
   const animated = useCountUp(value, 1100, value * 0.6);
 
   return (
-    <div className="rounded-md border border-white/10 bg-white/[0.035] p-4">
-      <p className="text-[0.65rem] font-black uppercase tracking-[0.2em] text-white/48">{label}</p>
-      <p className="scoreboard-text mt-2 text-4xl text-white">
+    <div className="rounded-md border border-[#102117]/10 bg-white p-4 shadow-sm">
+      <p className="text-[0.65rem] font-black uppercase tracking-[0.2em] text-[#102117]/50">{label}</p>
+      <p className="scoreboard-text mt-2 text-4xl text-[#102117]">
         {value % 1 === 0 ? Math.round(animated) : animated.toFixed(1)}
         {suffix}
       </p>
@@ -46,7 +46,7 @@ export function LiveMatchSection() {
       eyebrow="Live Match Feed"
       title="Scoreboard With Teeth"
       intro="Every number behaves like broadcast graphics: fast, loud, legible, and alive under stadium pressure."
-      className="bg-[#050505]"
+      className="bg-[#F7F9F2]"
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)]">
         <Reveal>
@@ -57,10 +57,10 @@ export function LiveMatchSection() {
                 <div className="flex items-center gap-4">
                   <TeamLogo logo={batting.logo} primary={batting.primary} accent={batting.accent} />
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#5CFF8F]">
+                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#0B5A3F]">
                       Batting
                     </p>
-                    <h3 className="font-display text-4xl uppercase text-white sm:text-5xl">
+                    <h3 className="font-display text-4xl uppercase text-[#102117] sm:text-5xl">
                       {batting.shortName}
                     </h3>
                   </div>
@@ -70,7 +70,7 @@ export function LiveMatchSection() {
                     <p className="text-xs font-black uppercase tracking-[0.24em] text-[#FF3B3B]">
                       Bowling
                     </p>
-                    <h3 className="font-display text-4xl uppercase text-white sm:text-5xl">
+                    <h3 className="font-display text-4xl uppercase text-[#102117] sm:text-5xl">
                       {bowling.shortName}
                     </h3>
                   </div>
@@ -79,20 +79,20 @@ export function LiveMatchSection() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-                <div className="rounded-md border border-[#5CFF8F]/20 bg-black/55 p-5">
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-white/48">
+                <div className="rounded-md border border-[#0B5A3F]/15 bg-[#F4FAF5] p-5">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#102117]/50">
                     Target
                   </p>
-                  <p className="scoreboard-text mt-2 text-6xl text-[#5CFF8F] sm:text-7xl">202</p>
+                  <p className="scoreboard-text mt-2 text-6xl text-[#0B5A3F] sm:text-7xl">202</p>
                 </div>
-                <div className="grid h-16 w-16 place-items-center justify-self-center rounded-full border border-white/15 bg-white/[0.04] font-score text-2xl text-white/70">
+                <div className="grid h-16 w-16 place-items-center justify-self-center rounded-full border border-[#102117]/10 bg-white font-score text-2xl text-[#102117]/70 shadow-sm">
                   VS
                 </div>
-                <div className="rounded-md border border-[#E6B325]/20 bg-black/55 p-5 sm:text-right">
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-white/48">
+                <div className="rounded-md border border-[#E6B325]/25 bg-[#FFF8DF] p-5 sm:text-right">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#102117]/50">
                     Current
                   </p>
-                  <p className="scoreboard-text mt-2 text-6xl text-white sm:text-7xl">141/3</p>
+                  <p className="scoreboard-text mt-2 text-6xl text-[#102117] sm:text-7xl">141/3</p>
                 </div>
               </div>
 
@@ -105,8 +105,8 @@ export function LiveMatchSection() {
 
               <div>
                 <div className="mb-3 flex items-center justify-between gap-4">
-                  <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-white/54">
-                    <Activity className="h-4 w-4 text-[#5CFF8F]" />
+                  <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-[#102117]/54">
+                    <Activity className="h-4 w-4 text-[#0B5A3F]" />
                     Over by over
                   </p>
                   <p className="font-score text-2xl text-[#E6B325]">12.0 overs</p>
@@ -123,7 +123,7 @@ export function LiveMatchSection() {
                         "grid h-12 place-items-center rounded-md border font-score text-xl",
                         over.includes("W")
                           ? "border-[#FF3B3B]/45 bg-[#FF3B3B]/18 text-[#FF8D8D]"
-                          : "border-white/10 bg-white/[0.04] text-white",
+                          : "border-[#102117]/10 bg-white text-[#102117]",
                       )}
                     >
                       {over}
@@ -140,10 +140,10 @@ export function LiveMatchSection() {
             <div className="broadcast-frame rounded-md p-5 sm:p-6">
               <div className="mb-5 flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#5CFF8F]">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">
                     Worm
                   </p>
-                  <h3 className="font-display text-4xl uppercase text-white">Run Rate Surge</h3>
+                  <h3 className="font-display text-4xl uppercase text-[#102117]">Run Rate Surge</h3>
                 </div>
                 <Gauge className="h-8 w-8 text-[#E6B325]" />
               </div>
@@ -162,17 +162,17 @@ export function LiveMatchSection() {
                       <YAxis stroke="rgba(255,255,255,0.38)" tickLine={false} axisLine={false} width={28} />
                       <ChartTooltip
                         contentStyle={{
-                          background: "#07110e",
-                          border: "1px solid rgba(92,255,143,.25)",
+                          background: "#ffffff",
+                          border: "1px solid rgba(16,33,23,.14)",
                           borderRadius: 6,
-                          color: "#fff",
+                          color: "#102117",
                         }}
                       />
                       <Area type="monotone" dataKey="runs" stroke="#5CFF8F" strokeWidth={3} fill="url(#runs)" />
                     </AreaChart>
                   </ResponsiveContainer>
                 ) : (
-                  <div className="h-full rounded-md bg-white/[0.035]" />
+                  <div className="h-full rounded-md bg-[#102117]/[0.035]" />
                 )}
               </div>
             </div>
@@ -185,10 +185,10 @@ export function LiveMatchSection() {
                   <Radio className="h-4 w-4" />
                   Win predictor
                 </p>
-                <p className="scoreboard-text text-4xl text-white">{Math.round(win)}%</p>
+                <p className="scoreboard-text text-4xl text-[#102117]">{Math.round(win)}%</p>
               </div>
-              <Progress value={win} className="h-2 bg-white/10" />
-              <p className="mt-4 text-sm leading-6 text-white/64">
+              <Progress value={win} className="h-2 bg-[#102117]/10" />
+              <p className="mt-4 text-sm leading-6 text-[#526158]">
                 Meteor still hold the edge, but Volt have two left-hand hitters and a short leg-side
                 boundary. The next eight balls can tilt the whole night.
               </p>
@@ -201,7 +201,7 @@ export function LiveMatchSection() {
                 <Zap className="h-4 w-4" />
                 Last event
               </p>
-              <p className="mt-3 font-score text-4xl uppercase text-white">
+              <p className="mt-3 font-score text-4xl uppercase text-[#102117]">
                 Six over long-on. New ball requested.
               </p>
             </div>

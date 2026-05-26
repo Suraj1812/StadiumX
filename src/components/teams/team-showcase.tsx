@@ -24,9 +24,9 @@ export function TeamShowcase() {
       eyebrow="Franchise Energy"
       title="Color, Noise, Rivalry"
       intro="The cards behave like pitch-side broadcast plates, with team identity baked into the light instead of pasted on afterward."
-      className="overflow-hidden bg-[linear-gradient(180deg,#050505,#071B2A_55%,#050505)]"
+      className="overflow-hidden bg-[linear-gradient(180deg,#F7F9F2,#EEF4EC_55%,#F7F9F2)]"
     >
-      <div className="absolute inset-x-0 top-1/3 h-px bg-gradient-to-r from-transparent via-[#5CFF8F]/40 to-transparent" />
+      <div className="absolute inset-x-0 top-1/3 h-px bg-gradient-to-r from-transparent via-[#0B5A3F]/24 to-transparent" />
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem]">
         <div className="grid gap-4 sm:grid-cols-2">
           {teams.map((team, index) => (
@@ -37,29 +37,29 @@ export function TeamShowcase() {
         </div>
 
         <Reveal delay={0.12}>
-          <aside className="sticky top-8 rounded-md border border-white/12 bg-black/45 p-5 shadow-2xl backdrop-blur-md">
+          <aside className="sticky top-8 rounded-md border border-[#102117]/10 bg-white/85 p-5 shadow-[0_24px_70px_rgba(16,33,23,.10)] backdrop-blur-md">
             <div className="mb-5 flex items-center gap-3">
               <div className="grid h-11 w-11 place-items-center rounded-md bg-[#E6B325]/15 text-[#E6B325]">
                 <BarChart3 className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#5CFF8F]">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">
                   Spotlight
                 </p>
-                <h3 className="font-display text-3xl uppercase text-white">{activeTeam.shortName} profile</h3>
+                <h3 className="font-display text-3xl uppercase text-[#102117]">{activeTeam.shortName} profile</h3>
               </div>
             </div>
-            <Separator className="bg-white/10" />
+            <Separator className="bg-[#102117]/10" />
             <div className="mt-6 space-y-5">
               {metrics.map(([label, value]) => (
                 <div key={label}>
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-xs font-black uppercase tracking-[0.18em] text-white/56">
+                    <span className="text-xs font-black uppercase tracking-[0.18em] text-[#102117]/56">
                       {label}
                     </span>
-                    <span className="font-score text-2xl text-white">{value}</span>
+                    <span className="font-score text-2xl text-[#102117]">{value}</span>
                   </div>
-                  <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-2 overflow-hidden rounded-full bg-[#102117]/10">
                     <motion.div
                       key={`${activeTeam.id}-${label}`}
                       initial={{ width: 0 }}
@@ -74,8 +74,8 @@ export function TeamShowcase() {
                 </div>
               ))}
             </div>
-            <div className="mt-7 rounded-md border border-white/10 bg-white/[0.04] p-4">
-              <p className="text-sm leading-6 text-white/66">
+            <div className="mt-7 rounded-md border border-[#102117]/10 bg-[#F7F9F2] p-4">
+              <p className="text-sm leading-6 text-[#526158]">
                 {activeTeam.name} are most dangerous when the camera cuts to the dugout and
                 everyone is standing. Their identity is pressure, not patience.
               </p>

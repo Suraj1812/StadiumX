@@ -30,11 +30,11 @@ export function PlayerCard({ player, index }: { player: Player; index: number })
   return (
     <motion.article
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.75, delay: index * 0.08 }}
-      className="group relative min-h-[36rem] overflow-hidden rounded-md border border-white/10 bg-[#07110e]"
+      className="group relative min-h-[36rem] overflow-hidden rounded-md border border-[#102117]/10 bg-[#102117] shadow-[0_24px_70px_rgba(16,33,23,.16)]"
     >
       <motion.div
         style={{ y: imageY }}
@@ -51,7 +51,7 @@ export function PlayerCard({ player, index }: { player: Player; index: number })
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(180deg, transparent 0%, #050505 82%), radial-gradient(circle at 25% 24%, ${player.accent}55, transparent 30%)`,
+          background: `linear-gradient(180deg, transparent 0%, #102117 82%), radial-gradient(circle at 25% 24%, ${player.accent}55, transparent 30%)`,
         }}
       />
       <div className="noise-overlay" />
@@ -67,7 +67,7 @@ export function PlayerCard({ player, index }: { player: Player; index: number })
           />
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#5CFF8F]">
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#7FE6A0]">
             {player.role} / {player.team}
           </p>
           <h3 className="mt-2 font-display text-5xl uppercase leading-none text-white sm:text-6xl">

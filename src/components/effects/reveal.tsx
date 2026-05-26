@@ -16,7 +16,7 @@ export function Reveal({
   return (
     <motion.div
       variants={revealUp}
-      initial="hidden"
+      initial="visible"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       transition={{ delay }}

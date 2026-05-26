@@ -11,11 +11,11 @@ export function TeamLogo({ logo, primary, accent, className }: TeamLogoProps) {
   return (
     <div
       className={cn(
-        "relative grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-md border border-white/15 shadow-2xl sm:h-20 sm:w-20",
+        "relative grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-md border border-[#102117]/10 shadow-2xl sm:h-20 sm:w-20",
         className,
       )}
       style={{
-        background: `linear-gradient(145deg, ${primary}, #050505 62%)`,
+        background: `linear-gradient(145deg, ${primary}, #102117 72%)`,
         boxShadow: `0 0 38px ${accent}33`,
       }}
     >
