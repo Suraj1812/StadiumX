@@ -1,6 +1,5 @@
 "use client";
 
-import { RadioTower } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaGithub, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
@@ -32,8 +31,8 @@ export function Footer() {
             </span>
           </div>
           <p className="max-w-xl text-sm leading-6 text-[#526158]">
-            Cricket broadcast design, crowd emotion, live analytics, and 3D stadium atmosphere
-            fused into one premium single-page experience.
+            A cleaner cricket club and match-day platform with fixtures, standings,
+            player form, real media, and live analytics in one place.
           </p>
         </div>
         <div className="flex gap-3">

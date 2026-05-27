@@ -1,54 +1,110 @@
 "use client";
 
-import { motion } from "framer-motion";
 import gsap from "gsap";
-import { ChevronDown, Radio, SignalHigh } from "lucide-react";
+import Image from "next/image";
+import {
+  BarChart3,
+  CalendarDays,
+  Radio,
+  SignalHigh,
+  Trophy,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 import { MagneticButton } from "@/components/effects/magnetic-button";
-import { StadiumScene } from "@/components/stadium/stadium-scene";
-import { Badge } from "@/components/ui/badge";
-import { broadcastStats } from "@/data/cricket";
+import { TeamLogo } from "@/components/scoreboard/team-logo";
+import { fixtures, teams } from "@/data/cricket";
 import { useCountUp } from "@/hooks/use-count-up";
-import { useMousePosition } from "@/hooks/use-mouse-position";
-import { cn } from "@/lib/utils";
 import { LiveTicker } from "./live-ticker";
 
-function AnimatedScore() {
-  const runs = Math.round(useCountUp(141, 1400, 88));
-  const wickets = Math.round(useCountUp(3, 900, 1));
-  const balls = Math.round(useCountUp(72, 1400, 42));
+function HeroScoreCard() {
+  const runs = Math.round(useCountUp(141, 950, 118));
+  const wickets = Math.round(useCountUp(3, 800, 2));
+  const win = Math.round(useCountUp(54, 1000, 45));
+  const batting = teams[2];
+  const bowling = teams[0];
 
   return (
-    <div className="broadcast-frame clip-score w-full max-w-xl px-5 py-4 sm:px-7">
-      <div className="flex items-center justify-between gap-5">
-        <div>
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#0B5A3F]">
-            Live chase
+    <div className="overflow-hidden rounded-md border border-[#102117]/10 bg-white shadow-[0_26px_80px_rgba(16,33,23,.14)]">
+      <div className="bg-[#102117] px-5 py-4 text-white">
+        <div className="flex items-center justify-between gap-4">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#7FE6A0]">
+            Live match
           </p>
-          <div className="scoreboard-text mt-1 text-5xl leading-none text-[#102117] sm:text-7xl">
-            {runs}/{wickets}
+          <p className="text-xs font-black uppercase tracking-[0.16em] text-white/60">
+            12.0 overs
+          </p>
+        </div>
+      </div>
+
+      <div className="p-5 sm:p-6">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+          <div>
+            <TeamLogo logo={batting.logo} primary={batting.primary} accent={batting.accent} className="h-14 w-14" />
+            <p className="mt-3 font-score text-3xl leading-none text-[#102117]">{batting.shortName}</p>
+          </div>
+          <div className="rounded-full border border-[#102117]/10 px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#68766e]">
+            vs
+          </div>
+          <div className="text-right">
+            <TeamLogo logo={bowling.logo} primary={bowling.primary} accent={bowling.accent} className="ml-auto h-14 w-14" />
+            <p className="mt-3 font-score text-3xl leading-none text-[#102117]">{bowling.shortName}</p>
           </div>
         </div>
-        <div className="text-right">
-          <p className="font-score text-3xl text-[#E6B325]">{(balls / 6).toFixed(1)}</p>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#102117]/54">Overs</p>
+
+        <div className="my-6 rounded-md bg-[#F4FAF5] p-5">
+          <p className="text-[0.66rem] font-black uppercase tracking-[0.18em] text-[#68766e]">
+            Chasing 202
+          </p>
+          <div className="mt-2 flex items-end justify-between gap-4">
+            <p className="font-score text-7xl leading-none text-[#102117]">
+              {runs}/{wickets}
+            </p>
+            <p className="pb-2 text-right text-sm font-bold text-[#0B5A3F]">{win}% win</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            ["RR", "11.8"],
+            ["Need", "61"],
+            ["Balls", "48"],
+          ].map(([label, value]) => (
+            <div key={label} className="rounded-md border border-[#102117]/10 p-3">
+              <p className="text-[0.62rem] font-black uppercase tracking-[0.16em] text-[#68766e]">
+                {label}
+              </p>
+              <p className="font-score text-3xl text-[#102117]">{value}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-function HeroStat({ label, value, suffix = "" }: { label: string; value: number; suffix?: string }) {
-  const animated = useCountUp(value, 1200, value * 0.5);
+function HeroFixture() {
+  const fixture = fixtures[0];
 
   return (
-    <div className="broadcast-frame rounded-md p-4">
-      <p className="text-[0.64rem] font-black uppercase tracking-[0.2em] text-[#102117]/50">
-        {label}
-      </p>
-      <p className="scoreboard-text mt-2 text-4xl text-[#102117]">
-        {Math.round(animated)}
-        {suffix}
+    <div className="rounded-md border border-[#102117]/10 bg-white p-4 shadow-[0_18px_50px_rgba(16,33,23,.08)]">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-[#0B5A3F]">
+          <CalendarDays className="h-4 w-4" />
+          Next fixture
+        </p>
+        <span className="rounded-full bg-[#EDF8EE] px-3 py-1 text-[0.64rem] font-black uppercase tracking-[0.14em] text-[#0B5A3F]">
+          {fixture.tag}
+        </span>
+      </div>
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+        <p className="font-score text-2xl leading-none text-[#102117]">{fixture.home}</p>
+        <span className="rounded-full border border-[#102117]/10 px-2 py-1 text-[0.64rem] font-black text-[#68766e]">
+          vs
+        </span>
+        <p className="text-right font-score text-2xl leading-none text-[#102117]">{fixture.away}</p>
+      </div>
+      <p className="mt-3 text-sm text-[#68766e]">
+        {fixture.date} / {fixture.time} / {fixture.venue}
       </p>
     </div>
   );
@@ -56,7 +112,6 @@ function HeroStat({ label, value, suffix = "" }: { label: string; value: number;
 
 export function HeroSection() {
   const scope = useRef<HTMLDivElement>(null);
-  const mouse = useMousePosition();
 
   useEffect(() => {
     if (!scope.current) {
@@ -64,84 +119,90 @@ export function HeroSection() {
     }
 
     const context = gsap.context(() => {
-      const timeline = gsap.timeline({ defaults: { ease: "power4.out" } });
-      timeline
-        .from(".hero-kicker", { opacity: 0, y: 24, duration: 0.8 })
-        .from(".hero-title span", { yPercent: 120, opacity: 0, stagger: 0.08, duration: 1.05 }, "-=0.45")
-        .from(".hero-copy", { opacity: 0, y: 20, duration: 0.8 }, "-=0.5")
-        .from(".hero-panel", { opacity: 0, scale: 0.95, y: 24, stagger: 0.08, duration: 0.7 }, "-=0.35");
+      gsap
+        .timeline({ defaults: { ease: "power3.out" } })
+        .from(".hero-kicker", { opacity: 0, y: 14, duration: 0.55 })
+        .from(".hero-title", { opacity: 0, y: 22, duration: 0.75 }, "-=0.25")
+        .from(".hero-copy", { opacity: 0, y: 14, duration: 0.6 }, "-=0.35")
+        .from(".hero-panel", { opacity: 0, y: 18, stagger: 0.08, duration: 0.55 }, "-=0.25");
     }, scope);
 
     return () => context.revert();
   }, []);
 
   return (
-    <section
-      ref={scope}
-      className="relative min-h-[94vh] overflow-hidden bg-[#F7F9F2] section-x"
-      style={{
-        backgroundImage: `radial-gradient(circle at ${mouse.x * 100}% ${mouse.y * 72}%, rgb(92 255 143 / 0.16), transparent 24rem)`,
-      }}
-    >
-      <div className="stadium-grid absolute inset-x-0 bottom-0 z-[1] h-2/3 opacity-55" />
-      <div className="noise-overlay z-[2]" />
-      <div className="pointer-events-none absolute -left-28 top-20 z-[2] h-[32rem] w-80 rotate-12 animate-spotlight bg-[#5CFF8F]/14 blur-3xl" />
-      <div className="pointer-events-none absolute -right-28 top-16 z-[2] h-[30rem] w-80 -rotate-12 animate-spotlight bg-[#E6B325]/12 blur-3xl" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-52 bg-gradient-to-t from-[#F7F9F2] to-transparent" />
+    <section ref={scope} className="relative overflow-hidden bg-[#F7F9F2] pt-20">
+      <div className="absolute inset-x-0 top-0 h-[44rem] bg-[#071421]" />
+      <div className="absolute inset-x-0 top-0 h-[44rem]">
+        <Image
+          src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=2200&q=90"
+          alt="Cricket match on a green field"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-60"
+        />
+      </div>
+      <div className="absolute inset-x-0 top-0 h-[44rem] bg-gradient-to-r from-[#071421] via-[#071421]/62 to-[#071421]/16" />
+      <div className="absolute inset-x-0 top-[34rem] h-40 bg-gradient-to-b from-transparent to-[#F7F9F2]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[94vh] w-full max-w-7xl flex-col justify-between pb-8 pt-24 sm:pt-28">
-       <div className="grid gap-10 pb-10 pt-16 lg:grid-cols-[minmax(0,1fr)_25rem] lg:pb-16 lg:pt-24">
-          <div>
-           
-            <h1 className="hero-title max-w-5xl overflow-hidden font-display text-[clamp(4.2rem,16vw,12.5rem)] uppercase leading-[0.78] text-[#102117]">
-              <span className="block">Cricket</span>
-              <span className="block text-[#0B5A3F]">In Motion</span>
-            </h1>
-            <p className="hero-copy mt-6 max-w-2xl text-base leading-7 text-[#526158] sm:text-xl sm:leading-8">
-              A polished cricket command center with live data, team stories, match
-              analytics, and premium sports energy presented in a calm, usable interface.
-            </p>
-            <div className="hero-panel mt-8 flex flex-col gap-3 sm:flex-row">
-              <MagneticButton onClick={() => document.getElementById("live-match")?.scrollIntoView()}>
-                <SignalHigh className="h-4 w-4" />
-                Enter match
-              </MagneticButton>
-              <MagneticButton
-                variant="ghost"
-                onClick={() => document.getElementById("fan-experience")?.scrollIntoView()}
-              >
-                Raise the noise
-              </MagneticButton>
+      <div className="section-x relative z-10">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_29rem] lg:py-16">
+            <div className="max-w-3xl">
+              <div className="hero-kicker mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#7FE6A0] shadow-sm backdrop-blur-sm">
+                <Radio className="h-3.5 w-3.5" />
+                Cricket club and analytics platform
+              </div>
+              <h1 className="hero-title font-display text-[clamp(3.6rem,9vw,8.8rem)] uppercase leading-[0.86] text-white">
+                We look up, never give up.
+              </h1>
+              <p className="hero-copy mt-5 max-w-2xl text-base leading-7 text-white/78 sm:text-xl sm:leading-8">
+                Follow the fixture list, live match state, team table, player form, reports,
+                and video highlights from one clean cricket hub.
+              </p>
+
+              <div className="hero-panel mt-7 flex flex-col gap-3 sm:flex-row">
+                <MagneticButton onClick={() => document.getElementById("live-match")?.scrollIntoView()}>
+                  <SignalHigh className="h-4 w-4" />
+                  Open match center
+                </MagneticButton>
+                <MagneticButton
+                  variant="ghost"
+                  className="border-white/30 bg-white text-[#102117]"
+                  onClick={() => document.getElementById("season-hub")?.scrollIntoView()}
+                >
+                  View fixtures
+                </MagneticButton>
+              </div>
+
+              <div className="hero-panel mt-8 grid gap-3 sm:grid-cols-3">
+                {[
+                  ["Live scores", "Ball-by-ball context"],
+                  ["Fixtures", "Schedule and standings"],
+                  ["Highlights", "Real cricket video clips"],
+                ].map(([title, text], index) => (
+                  <div key={title} className="rounded-md border border-white/15 bg-white/12 p-4 text-white backdrop-blur-sm">
+                    <div className="mb-3 grid h-9 w-9 place-items-center rounded-md bg-white text-[#0B5A3F]">
+                      {index === 0 ? <SignalHigh className="h-4 w-4" /> : index === 1 ? <Trophy className="h-4 w-4" /> : <BarChart3 className="h-4 w-4" />}
+                    </div>
+                    <p className="font-black">{title}</p>
+                    <p className="mt-1 text-sm leading-5 text-white/70">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="hero-panel space-y-4">
+              <HeroScoreCard />
+              <HeroFixture />
             </div>
           </div>
 
-          <motion.div
-            className="hero-panel space-y-4"
-            initial={false}
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <AnimatedScore />
-            <div className="grid grid-cols-2 gap-3">
-              {broadcastStats.map((stat, index) => (
-                <div
-                  key={stat.label}
-                  className={cn(
-                    index === 0 ? "col-span-2" : "",
-                  )}
-                >
-                  <HeroStat label={stat.label} value={stat.value} suffix={stat.suffix} />
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          <div className="relative z-10 -mx-4 sm:-mx-6 lg:-mx-10 2xl:-mx-16">
+            <LiveTicker />
+          </div>
         </div>
-
-        <div className="relative z-10 -mx-4 sm:-mx-6 lg:-mx-10 2xl:-mx-16">
-          <LiveTicker />
-        </div>
-
-       
       </div>
     </section>
   );

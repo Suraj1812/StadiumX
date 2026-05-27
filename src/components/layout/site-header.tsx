@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, BarChart3, Menu, Trophy } from "lucide-react";
+import { BarChart3, Menu } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,10 +13,10 @@ import {
 
 const links = [
   { href: "#live-match", label: "Live Match" },
+  { href: "#season-hub", label: "Fixtures" },
   { href: "#teams", label: "Teams" },
   { href: "#players", label: "Players" },
   { href: "#analytics", label: "Analytics" },
-  { href: "#highlights", label: "Highlights" },
 ];
 
 export function SiteHeader() {

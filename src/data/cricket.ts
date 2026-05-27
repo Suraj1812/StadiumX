@@ -254,6 +254,27 @@ export const gallery = [
   },
 ];
 
+export const videoHighlights = [
+  {
+    title: "Village match slow motion",
+    label: "Real video / Wikimedia Commons",
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/93/This_slow-motion_video_captures_locals_from_Hund_village_playing_cricket_near_the_Indus_River%2C_a_popular_pastime_in_rural_Pakistan..webm",
+    source: "Wikimedia Commons",
+  },
+  {
+    title: "Samit Patel batting",
+    label: "Batting clip / 720p",
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/67/Samit_Patel_batting%2C_July_2011.ogv",
+    source: "Wikimedia Commons",
+  },
+  {
+    title: "Ben Stokes bowling",
+    label: "Bowling clip / 1080p",
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ben_Stokes_bowling%2C_2012.ogv",
+    source: "Wikimedia Commons",
+  },
+];
+
 export const broadcastStats = [
   { label: "Crowd db", value: 106, suffix: "" },
   { label: "Win swing", value: 18, suffix: "%" },
@@ -274,4 +295,56 @@ export const predictionCards = [
   { label: "Meteor defend", chance: 54, icon: Crown },
   { label: "Volt chase", chance: 46, icon: Flame },
   { label: "Super over", chance: 9, icon: Sparkles },
+];
+
+export const fixtures = [
+  {
+    date: "Tonight",
+    time: "7:30 PM",
+    venue: "Wankhede Stadium",
+    home: "Mumbai Meteor",
+    away: "Bengaluru Volt",
+    tag: "Qualifier",
+  },
+  {
+    date: "Fri",
+    time: "7:30 PM",
+    venue: "Chepauk",
+    home: "Chennai Crown",
+    away: "Kolkata Knights",
+    tag: "Eliminator",
+  },
+  {
+    date: "Sun",
+    time: "8:00 PM",
+    venue: "Narendra Modi Stadium",
+    home: "Finalist 1",
+    away: "Finalist 2",
+    tag: "Final",
+  },
+];
+
+export const standings = [
+  { pos: 1, team: "Mumbai Meteor", played: 10, points: 16, nrr: "+0.84" },
+  { pos: 2, team: "Chennai Crown", played: 10, points: 14, nrr: "+0.51" },
+  { pos: 3, team: "Bengaluru Volt", played: 10, points: 12, nrr: "+0.22" },
+  { pos: 4, team: "Kolkata Knights", played: 10, points: 12, nrr: "+0.18" },
+];
+
+export const newsItems = [
+  {
+    category: "Match report",
+    title: "Meteor close out a tense chase with two overs of elite yorkers",
+    meta: "6 min read",
+  },
+  {
+    category: "Selection",
+    title: "Chennai prepare a spin-heavy XI for the Chepauk eliminator",
+    meta: "Team notes",
+  },
+  {
+    category: "Analysis",
+    title: "Why Bengaluru’s powerplay intent is changing playoff math",
+    meta: "Data room",
+  },
 ];
