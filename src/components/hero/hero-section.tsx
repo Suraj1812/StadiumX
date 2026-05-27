@@ -3,11 +3,9 @@
 import gsap from "gsap";
 import Image from "next/image";
 import {
-  BarChart3,
   CalendarDays,
   Radio,
   SignalHigh,
-  Trophy,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { MagneticButton } from "@/components/effects/magnetic-button";
@@ -132,8 +130,8 @@ export function HeroSection() {
 
   return (
     <section ref={scope} className="relative overflow-hidden bg-[#F7F9F2] pt-20">
-      <div className="absolute inset-x-0 top-0 h-[44rem] bg-[#071421]" />
-      <div className="absolute inset-x-0 top-0 h-[44rem]">
+      <div className="absolute inset-x-0 top-0 h-[46rem] bg-[#071421]" />
+      <div className="absolute inset-x-0 top-0 h-[46rem]">
         <Image
           src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=2200&q=90"
           alt="Cricket match on a green field"
@@ -143,18 +141,18 @@ export function HeroSection() {
           className="object-cover opacity-60"
         />
       </div>
-      <div className="absolute inset-x-0 top-0 h-[44rem] bg-gradient-to-r from-[#071421] via-[#071421]/62 to-[#071421]/16" />
-      <div className="absolute inset-x-0 top-[34rem] h-40 bg-gradient-to-b from-transparent to-[#F7F9F2]" />
+      <div className="absolute inset-x-0 top-0 h-[46rem] bg-gradient-to-r from-[#071421] via-[#071421]/78 to-[#071421]/28" />
+      <div className="absolute inset-x-0 top-0 h-[46rem] bg-gradient-to-t from-[#071421]/55 via-transparent to-[#071421]/20" />
 
       <div className="section-x relative z-10">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_29rem] lg:py-16">
+          <div className="grid min-h-[40rem] items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_29rem] lg:py-16">
             <div className="max-w-3xl">
               <div className="hero-kicker mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#7FE6A0] shadow-sm backdrop-blur-sm">
                 <Radio className="h-3.5 w-3.5" />
                 Cricket club and analytics platform
               </div>
-              <h1 className="hero-title font-display text-[clamp(3.6rem,9vw,8.8rem)] uppercase leading-[0.86] text-white">
+              <h1 className="hero-title max-w-3xl font-display text-[clamp(3.4rem,8vw,7.4rem)] uppercase leading-[0.86] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,.45)]">
                 We look up, never give up.
               </h1>
               <p className="hero-copy mt-5 max-w-2xl text-base leading-7 text-white/78 sm:text-xl sm:leading-8">
@@ -176,20 +174,10 @@ export function HeroSection() {
                 </MagneticButton>
               </div>
 
-              <div className="hero-panel mt-8 grid gap-3 sm:grid-cols-3">
-                {[
-                  ["Live scores", "Ball-by-ball context"],
-                  ["Fixtures", "Schedule and standings"],
-                  ["Highlights", "Real cricket video clips"],
-                ].map(([title, text], index) => (
-                  <div key={title} className="rounded-md border border-white/15 bg-white/12 p-4 text-white backdrop-blur-sm">
-                    <div className="mb-3 grid h-9 w-9 place-items-center rounded-md bg-white text-[#0B5A3F]">
-                      {index === 0 ? <SignalHigh className="h-4 w-4" /> : index === 1 ? <Trophy className="h-4 w-4" /> : <BarChart3 className="h-4 w-4" />}
-                    </div>
-                    <p className="font-black">{title}</p>
-                    <p className="mt-1 text-sm leading-5 text-white/70">{text}</p>
-                  </div>
-                ))}
+              <div className="hero-panel mt-8 flex flex-wrap gap-3 text-xs font-black uppercase tracking-[0.16em] text-white/76">
+                <span className="rounded-full border border-white/18 bg-white/10 px-3 py-2 backdrop-blur-sm">Live scores</span>
+                <span className="rounded-full border border-white/18 bg-white/10 px-3 py-2 backdrop-blur-sm">Fixtures</span>
+                <span className="rounded-full border border-white/18 bg-white/10 px-3 py-2 backdrop-blur-sm">Real videos</span>
               </div>
             </div>
 

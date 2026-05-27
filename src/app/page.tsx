@@ -1,5 +1,5 @@
-import { StadiumExperience } from "@/components/stadium-experience";
+import { ClubSite } from "@/components/club-site";
 
 export default function Home() {
-  return <StadiumExperience />;
+  return <ClubSite />;
 }

@@ -24,9 +24,10 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "StadiumX | Cinematic Cricket Broadcast Experience",
+  metadataBase: new URL("https://stadiumx.club"),
+  title: "StadiumX Cricket Club",
   description:
-    "A premium cricket single page experience with live-match energy, 3D stadium visuals, broadcast graphics, and immersive fan interactions.",
+    "Fixtures, results, players, media, academy, and membership for StadiumX Cricket Club.",
 
   keywords: [
     "cricket",
@@ -38,9 +39,15 @@ export const metadata: Metadata = {
   ],
 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/stadiumx-mark.svg",
+    shortcut: "/stadiumx-mark.svg",
     apple: "/apple-icon.png",
+  },
+  openGraph: {
+    title: "StadiumX Cricket Club",
+    description:
+      "Fixtures, results, players, media, academy, and membership for StadiumX Cricket Club.",
+    images: ["/stadiumx-mark.png"],
   },
 };
 

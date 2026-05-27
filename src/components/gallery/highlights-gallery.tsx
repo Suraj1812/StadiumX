@@ -32,6 +32,7 @@ export function HighlightsGallery() {
               <video
                 className="aspect-video w-full object-cover"
                 src={videoHighlights[0].src}
+                poster={videoHighlights[0].poster}
                 controls
                 muted
                 playsInline
@@ -55,6 +56,7 @@ export function HighlightsGallery() {
                   <video
                     className="aspect-video w-full object-cover"
                     src={video.src}
+                    poster={video.poster}
                     muted
                     playsInline
                     preload="metadata"

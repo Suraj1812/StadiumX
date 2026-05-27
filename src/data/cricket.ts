@@ -259,18 +259,24 @@ export const videoHighlights = [
     title: "Village match slow motion",
     label: "Real video / Wikimedia Commons",
     src: "https://upload.wikimedia.org/wikipedia/commons/9/93/This_slow-motion_video_captures_locals_from_Hund_village_playing_cricket_near_the_Indus_River%2C_a_popular_pastime_in_rural_Pakistan..webm",
+    poster:
+      "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1200&q=85",
     source: "Wikimedia Commons",
   },
   {
     title: "Samit Patel batting",
     label: "Batting clip / 720p",
     src: "https://upload.wikimedia.org/wikipedia/commons/6/67/Samit_Patel_batting%2C_July_2011.ogv",
+    poster:
+      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=85",
     source: "Wikimedia Commons",
   },
   {
     title: "Ben Stokes bowling",
     label: "Bowling clip / 1080p",
     src: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ben_Stokes_bowling%2C_2012.ogv",
+    poster:
+      "https://images.unsplash.com/photo-1593766827228-8737b4534aa6?auto=format&fit=crop&w=1200&q=85",
     source: "Wikimedia Commons",
   },
 ];

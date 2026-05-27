@@ -1,0 +1,48 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>StadiumX cricket batsman mark</title>
+  <defs>
+    <clipPath id="roundel">
+      <circle cx="256" cy="256" r="224"/>
+    </clipPath>
+  </defs>
+  <circle cx="256" cy="256" r="224" fill="#D87326"/>
+  <g clip-path="url(#roundel)">
+    <path d="M93 397C147 393 199 377 251 353C307 327 359 310 423 320C397 372 344 416 270 438C200 459 130 452 74 426C80 414 86 404 93 397Z" fill="#9CC63A"/>
+    <path d="M75 431C162 442 268 425 390 381C322 433 217 461 76 446L75 431Z" fill="#FFFFFF"/>
+
+    <path d="M75 111C112 154 153 183 205 196C153 204 107 170 72 123L75 111Z" fill="#FFFFFF"/>
+    <path d="M113 75C153 119 201 145 259 153C198 162 153 139 101 88L113 75Z" fill="#FFFFFF"/>
+
+    <circle cx="164" cy="190" r="23" fill="#FFFFFF"/>
+    <rect x="125" y="223" width="75" height="24" rx="12" fill="#FFFFFF"/>
+    <rect x="129" y="238" width="17" height="183" rx="8.5" fill="#FFFFFF"/>
+    <rect x="155" y="238" width="17" height="183" rx="8.5" fill="#FFFFFF"/>
+    <rect x="181" y="238" width="17" height="183" rx="8.5" fill="#FFFFFF"/>
+
+    <path d="M248 73C286 77 332 88 382 110C390 113 391 123 384 129L358 148C317 133 274 114 235 91L248 73Z" fill="#FFFFFF"/>
+    <path d="M235 91C275 119 325 140 379 153L369 169C310 158 253 137 200 105L235 91Z" fill="#FFFFFF"/>
+
+    <path d="M229 103C243 80 275 73 299 88C317 99 327 120 323 140C319 165 298 181 273 179C250 177 233 164 226 145L211 139C205 137 203 131 207 126L223 108C224 106 226 104 229 103Z" fill="#FFFFFF"/>
+    <path d="M243 119L305 106" stroke="#D87326" stroke-width="8" stroke-linecap="round"/>
+    <path d="M243 142L307 128" stroke="#D87326" stroke-width="8" stroke-linecap="round"/>
+    <path d="M258 163L304 151" stroke="#D87326" stroke-width="8" stroke-linecap="round"/>
+    <path d="M288 88C308 99 318 117 319 141" stroke="#D87326" stroke-width="9" stroke-linecap="round"/>
+
+    <path d="M247 166C224 178 215 207 228 235C242 263 268 289 282 326C296 363 289 394 265 421C300 410 327 382 340 344C355 299 341 248 313 207C294 180 270 166 247 166Z" fill="#FFFFFF"/>
+    <path d="M244 166L191 139L216 123L281 151L244 166Z" fill="#FFFFFF"/>
+    <path d="M287 182C321 162 348 134 370 99L404 121C383 159 351 194 311 224L287 182Z" fill="#FFFFFF"/>
+    <path d="M375 116C385 99 398 85 414 76L445 90C429 105 417 123 408 144L375 116Z" fill="#FFFFFF"/>
+    <path d="M407 141C431 146 451 156 468 172C467 180 461 185 452 188C436 181 419 177 402 176L407 141Z" fill="#FFFFFF"/>
+
+    <path d="M324 255C355 278 392 285 441 267C433 299 409 325 374 345C340 342 312 327 289 303L324 255Z" fill="#FFFFFF"/>
+    <path d="M389 223C416 210 446 207 471 216C461 247 445 272 423 294C397 292 375 281 357 262C362 244 373 231 389 223Z" fill="#FFFFFF"/>
+    <path d="M314 338C349 340 384 350 421 369C408 385 391 394 371 399C339 379 305 370 269 372L314 338Z" fill="#FFFFFF"/>
+    <path d="M270 348C235 376 190 400 137 416C141 395 157 382 184 376C212 361 238 342 258 318L270 348Z" fill="#FFFFFF"/>
+    <path d="M137 408C192 409 238 397 279 371C253 407 207 428 132 430L137 408Z" fill="#FFFFFF"/>
+    <path d="M229 103C243 80 275 73 299 88C317 99 327 120 323 140C319 165 298 181 273 179C250 177 233 164 226 145L211 139C205 137 203 131 207 126L223 108C224 106 226 104 229 103Z" fill="#FFFFFF"/>
+    <path d="M243 119L305 106" stroke="#D87326" stroke-width="8" stroke-linecap="round"/>
+    <path d="M243 142L307 128" stroke="#D87326" stroke-width="8" stroke-linecap="round"/>
+    <path d="M258 163L304 151" stroke="#D87326" stroke-width="8" stroke-linecap="round"/>
+    <path d="M288 88C308 99 318 117 319 141" stroke="#D87326" stroke-width="9" stroke-linecap="round"/>
+  </g>
+</svg>
