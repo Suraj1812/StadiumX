@@ -333,46 +333,7 @@ export function ClubSite() {
               </a>
             </div>
           </div>
-
-          <aside className="rounded-xl border border-[#dce5d8] bg-white p-5 shadow-[0_18px_60px_rgb(16_33_23/0.14)]">
-            <div className="mb-4 flex items-center justify-between">
-              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0b6b43]">
-                Next home match
-              </p>
-              <Ticket className="h-5 w-5 text-[#0b6b43]" aria-hidden="true" />
-            </div>
-            <div className="grid gap-4 rounded-lg bg-[#f4f7f0] p-5">
-              <div className="flex items-center gap-3">
-                <TeamMark>SX</TeamMark>
-                <p className="font-display text-4xl uppercase leading-none text-[#111827]">
-                  StadiumX CC
-                </p>
-              </div>
-              <p className="text-center text-xs font-extrabold uppercase tracking-[0.2em] text-[#0b6b43]">
-                vs
-              </p>
-              <div className="flex items-center justify-end gap-3">
-                <p className="text-right font-display text-4xl uppercase leading-none text-[#111827]">
-                  Riverdale
-                </p>
-                <TeamMark>RS</TeamMark>
-              </div>
-            </div>
-            <div className="mt-5 grid gap-3 text-sm font-medium text-[#4b5563]">
-              <p className="flex items-center gap-2">
-                <CalendarDays className="h-4 w-4 text-[#0b6b43]" aria-hidden="true" />
-                Saturday, 21 Jun 2026
-              </p>
-              <p className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-[#0b6b43]" aria-hidden="true" />
-                7:30 PM
-              </p>
-              <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-[#0b6b43]" aria-hidden="true" />
-                StadiumX Oval
-              </p>
-            </div>
-          </aside>
+          <div></div>
         </div>
       </section>
 
